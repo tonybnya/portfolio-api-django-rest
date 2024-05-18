@@ -12,7 +12,7 @@ class ProjectImageInline(admin.TabularInline):
 class ProjectAdmin(admin.ModelAdmin):
     """Custom fields inside the Admin panel of Django."""
 
-    list_display = ("title",)
+    list_display = ("title", "live_url", "source_url")
     inlines = [ProjectImageInline]
     search_fields = ("title", "description")
     list_filter = ("tags",)
