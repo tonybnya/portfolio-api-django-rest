@@ -1,0 +1,19 @@
+# Virtual environment
+.venv/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# VSCode settings
+.vscode/
+
+# MacOS stuff
+.DS_Store
