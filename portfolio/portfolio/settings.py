@@ -26,7 +26,11 @@ SECRET_KEY = "f#@^op=rmq=kx+x5)km2dusdyktl)$==5@h426y+l4%_g%te!q"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",  # For local development
+    "127.0.0.1",  # For local development
+    "portfolio-api.onrender.com",  # Your Render domain
+]
 
 
 # Application definition
