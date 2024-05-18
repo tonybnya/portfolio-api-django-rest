@@ -9,16 +9,16 @@ class ProjectImageInline(admin.TabularInline):
     extra = 1
 
 
-class ProjectAdmin(models.ModelAdmin):
+class ProjectAdmin(admin.ModelAdmin):
     """Custom fields inside the Admin panel of Django."""
 
-    list_display = ("title", "link")
+    list_display = ("title",)
     inlines = [ProjectImageInline]
     search_fields = ("title", "description")
     list_filter = ("tags",)
 
 
-class TagAdmin(admnin.modelAdmin):
+class TagAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
 
