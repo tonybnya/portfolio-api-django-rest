@@ -31,7 +31,8 @@ DEBUG = get_env_variable("DJANGO_DEBUG") == "True"
 ALLOWED_HOSTS = [
     "localhost",  # For local development
     "127.0.0.1",  # For local development
-    "portfolio-api-ikc3.onrender.com",  # Your Render domain
+    "tonybnya.pythonanywhere.com",  # PythonAnywhere web app
+    # "portfolio-api-ikc3.onrender.com",  # Your Render domain
 ]
 
 
