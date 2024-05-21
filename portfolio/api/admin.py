@@ -32,3 +32,4 @@ class TimelineAdmin(admin.ModelAdmin):
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectImage)
+admin.site.register(Timeline, TimelineAdmin)
