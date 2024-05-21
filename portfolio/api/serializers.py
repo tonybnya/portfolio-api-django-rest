@@ -15,6 +15,20 @@ class TimelineSerializer(serializers.ModelSerializer):
             "details",
         ]
 
+    def create(self, validated_data):
+        timeline = Timeline.objects.create(**validated_data)
+
+        return timeline
+
+    def update(self, instance, validated_data):
+        instance.year = validated_data.get("year", instance.year)
+        instance.milestone = validated_data.get("milestone", instance.milestone)
+        instance.duration = validated_data.get("duration", instance.duration)
+        instance.details = validated_data.get("details", instance.details)
+        instance.save()
+
+        return instance
+
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
