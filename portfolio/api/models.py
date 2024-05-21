@@ -36,3 +36,15 @@ class ProjectImage(models.Model):
 
     def __str__(self):
         return f"{self.project.title} Image"
+
+
+class Timeline(models.Model):
+    """This model stores my timelines as a Software Engineer."""
+
+    year = models.CharField(max_length=50)
+    milestone = models.CharField(max_length=200)
+    duration = models.CharField(max_length=50)
+    details = models.TextField()
+
+    def __str__(self):
+        return self.milestone

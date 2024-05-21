@@ -1,7 +1,19 @@
 from django.db.models.expressions import fields
 from rest_framework import serializers
 
-from .models import Project, ProjectImage, Tag
+from .models import Project, ProjectImage, Tag, Timeline
+
+
+class TimelineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Timeline
+        fields = [
+            "id",
+            "year",
+            "milestone",
+            "duration",
+            "details",
+        ]
 
 
 class TagSerializer(serializers.ModelSerializer):

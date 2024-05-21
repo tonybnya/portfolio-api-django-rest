@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Project, ProjectImage, Tag
+from .models import Project, ProjectImage, Tag, Timeline
 
 
 # Register your models here.
@@ -21,6 +21,12 @@ class ProjectAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
+
+
+class TimelineAdmin(admin.ModelAdmin):
+    list_display = ("year", "milestone", "duration")
+    search_fields = ("milestone", "year")
+    list_filter = ("year",)
 
 
 admin.site.register(Tag, TagAdmin)
