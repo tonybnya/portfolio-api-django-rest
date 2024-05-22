@@ -1,39 +1,43 @@
 import os
 from pathlib import Path
 
-from django.core.exceptions import ImproperlyConfigured
-from dotenv import load_dotenv
+# from django.core.exceptions import ImproperlyConfigured
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def get_env_variable(var_name):
-    """Get the environment variable or return exception."""
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = f"Set the {var_name} environment variable"
-        raise ImproperlyConfigured(error_msg)
+# def get_env_variable(var_name):
+#     """Get the environment variable or return exception."""
+#     try:
+#         return os.environ[var_name]
+#     except KeyError:
+#         error_msg = f"Set the {var_name} environment variable"
+#         raise ImproperlyConfigured(error_msg)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
+# SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
+SECRET_KEY = "f#@^op=rmq=kx+x5)km2dusdyktl)$==5@h426y+l4%_g%te!q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = get_env_variable("DJANGO_DEBUG") == "True"
+# DEBUG = get_env_variable("DJANGO_DEBUG") == "True"
+DEBUG = "True"
 
 ALLOWED_HOSTS = [
-    "localhost",  # For local development
-    "127.0.0.1",  # For local development
-    "tonybnya.pythonanywhere.com",  # PythonAnywhere web app
+    "*",  # run on any host
+    # "localhost",  # For local development
+    # "127.0.0.1",  # For local development
+    # "tonybnya.pythonanywhere.com",  # PythonAnywhere web app
     # "portfolio-api-ikc3.onrender.com",  # Your Render domain
 ]
+CSRF_TRUSTED_ORIGINS = ["http://*.on-acorn.io", "https://*.on-acorn.io"]
 
 
 # Application definition
@@ -90,6 +94,14 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.mysql",
+    #     "NAME": os.getenv("MARIADB_DATABASE"),
+    #     "USER": os.getenv("MARIADB_USER"),
+    #     "PASSWORD": os.getenv("MARIADB_ROOT_PASSWORD"),
+    #     "HOST": os.getenv("MARIADB_HOST"),
+    #     "PORT": os.getenv("MARIADB_PORT", 3306),
+    # }
 }
 
 
